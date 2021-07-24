@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MainComponent } from './main/main.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { BannerComponent } from './main/banner/banner.component';
+import { PopularDestinationComponent } from './main/popular-destination/popular-destination.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     NavigationComponent,
     MainComponent,
     CourseCardComponent,
-    BannerComponent
+    BannerComponent,
+    PopularDestinationComponent
   ],
   imports: [
     BrowserModule,

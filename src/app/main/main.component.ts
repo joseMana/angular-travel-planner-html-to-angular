@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'main',
@@ -7,8 +6,6 @@ import { BannerComponent } from './banner/banner.component';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-
-  public banner: BannerComponent;
 
   constructor() { }
 

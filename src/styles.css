@@ -391,7 +391,7 @@ body {
 }
 
 .list-card #image-div {
-  /*background: url("../img/img1.png") #41476b;*/
+  background: url("assets/img/img1.png") #41476b;
   background-blend-mode: multiply;
   background-size: cover;
   height: 150px;
