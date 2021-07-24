@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MainAppComponent } from './main-app/main-app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -17,6 +18,7 @@ import { TestimonialComponent } from './home-page/testimonial/testimonial.compon
 @NgModule({
   declarations: [
     AppComponent,
+    MainAppComponent,
     SideMenuComponent,
     HomePageComponent,
     CourseCardComponent,
