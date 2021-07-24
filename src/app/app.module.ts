@@ -4,21 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { MainComponent } from './main/main.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { CourseCardComponent } from './course-card/course-card.component';
-import { BannerComponent } from './main/banner/banner.component';
-import { PopularDestinationComponent } from './main/popular-destination/popular-destination.component';
-import { FeaturedTravelComponent } from './main/featured-travel/featured-travel.component';
-import { WhyUsComponent } from './main/why-us/why-us.component';
-import { TestimonialComponent } from './main/testimonial/testimonial.component';
+import { BannerComponent } from './home-page/banner/banner.component';
+import { PopularDestinationComponent } from './home-page/popular-destination/popular-destination.component';
+import { FeaturedTravelComponent } from './home-page/featured-travel/featured-travel.component';
+import { WhyUsComponent } from './home-page/why-us/why-us.component';
+import { TestimonialComponent } from './home-page/testimonial/testimonial.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    MainComponent,
+    SideMenuComponent,
+    HomePageComponent,
     CourseCardComponent,
     BannerComponent,
     PopularDestinationComponent,
