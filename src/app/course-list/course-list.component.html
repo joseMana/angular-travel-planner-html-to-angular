@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header-row">
+        <h5 #listTitle>Available Courses (Parent component)</h5>
+        <div>
+            <button class="btn btn-primary" (click)="logViewChildren(); isViewChildButtonClicked = true;">Log ViewChild Elements</button>
+            <br />
+            <span *ngIf="isViewChildButtonClicked">(See console log)</span>
+        </div>
+    </div>
+    <div class="started-courses">
+        Started courses:
+        <span class="badge badge-pill badge-light" [class.d-none]="!course1.hasStarted">{{ course1.title }}</span>
+        <span class="badge badge-pill badge-light" [class.d-none]="!course2.hasStarted">{{ course2.title }}</span>
+        <span class="badge badge-pill badge-light" [class.d-none]="!course3.hasStarted">{{ course3.title }}</span>
+    </div>
+    <div class="course-list">
+        <!-- Passing data from parent to child component using Input property -->
+        <!-- Passing data from child to parent component using Output property and Event emitter -->
+        <app-course-card [course]="course1" (courseStarted)="startCourse($event)"></app-course-card>
+        <app-course-card [course]="course2" (courseStarted)="startCourse($event)"></app-course-card>
+        <app-course-card [course]="course3" (courseStarted)="startCourse($event)"></app-course-card>
+    </div>
+</div>
