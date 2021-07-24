@@ -9,6 +9,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { BannerComponent } from './main/banner/banner.component';
 import { PopularDestinationComponent } from './main/popular-destination/popular-destination.component';
 import { FeaturedTravelComponent } from './main/featured-travel/featured-travel.component';
+import { WhyUsComponent } from './main/why-us/why-us.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CourseCardComponent,
     BannerComponent,
     PopularDestinationComponent,
-    FeaturedTravelComponent
+    FeaturedTravelComponent,
+    WhyUsComponent
   ],
   imports: [
     BrowserModule,
