@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    NavigationComponent,
     CourseListComponent,
     CourseCardComponent
   ],

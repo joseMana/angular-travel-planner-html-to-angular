@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Avenir";
-  src: url("assets/font/Avenir-Book.woff2") format("otf"), url("assets/font/Avenir-Book.woff") format("woff");
+  src: url("../../assets/font/Avenir-Book.woff2") format("otf"), url("../../assets/font/Avenir-Book.woff") format("woff");
 }
 
 @font-face {
   font-family: "Avenir Bold";
-  src: url("assets/font/Avenir-Black.woff2") format("otf"), url("assets/font/Avenir-Black.woff") format("woff");
+  src: url("../../assets/font/Avenir-Black.woff2") format("otf"), url("../../assets/font/Avenir-Black.woff") format("woff");
 }
 
 * {
@@ -283,10 +283,10 @@ a:hover {
   padding: 15px;
 }
 
-  .btn-green:hover {
-    color: white;
-    font-size: 17px;
-  }
+.btn-green:hover {
+  color: white;
+  font-size: 17px;
+}
 
 .text-label {
   color: #acacac !important;
@@ -341,10 +341,10 @@ body {
   background: #698474;
 }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 /* Travel Cards */
 .save-travel {
@@ -458,16 +458,16 @@ body {
     text-align: center !important;
   }
 
-    #rate-div div {
-      padding: unset !important;
-      align-self: center;
-      max-width: 100% !important;
-    }
+  #rate-div div {
+    padding: unset !important;
+    align-self: center;
+    max-width: 100% !important;
+  }
 
-    #rate-div img {
-      width: 100px !important;
-      height: 100px !important;
-    }
+  #rate-div img {
+    width: 100px !important;
+    height: 100px !important;
+  }
 
   #testimonials {
     padding: unset !important;
@@ -478,12 +478,12 @@ body {
     justify-content: center;
   }
 
-    #search-div .div {
-      width: 100% !important;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
+  #search-div .div {
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
 
   #footer div {
     padding: 5px;
