@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MainAppComponent } from './main-app/main-app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { CourseCardComponent } from './course-card/course-card.component';
 import { BannerComponent } from './home-page/banner/banner.component';
 import { PopularDestinationComponent } from './home-page/popular-destination/popular-destination.component';
 import { FeaturedTravelComponent } from './home-page/featured-travel/featured-travel.component';
@@ -21,7 +20,6 @@ import { TestimonialComponent } from './home-page/testimonial/testimonial.compon
     MainAppComponent,
     SideMenuComponent,
     HomePageComponent,
-    CourseCardComponent,
     BannerComponent,
     PopularDestinationComponent,
     FeaturedTravelComponent,
