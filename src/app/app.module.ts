@@ -6,14 +6,17 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MainComponent } from './main/main.component';
 import { CourseCardComponent } from './course-card/course-card.component';
+import { BannerComponent } from './main/banner/banner.component';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     MainComponent,
-    CourseCardComponent
+    CourseCardComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

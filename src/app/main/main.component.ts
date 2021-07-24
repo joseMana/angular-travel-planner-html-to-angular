@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CourseCardComponent } from '../course-card/course-card.component';
+import { BannerComponent } from './banner/banner.component';
 import { Course } from '../models/course.model';
 
 @Component({
@@ -12,7 +13,7 @@ export class MainComponent implements OnInit {
   @ViewChild(CourseCardComponent) course1Ref: CourseCardComponent;
   @ViewChild('listTitle') listTitleRef: ElementRef;
 
-  public course1: Course;
+  public banner: BannerComponent;
   public course2: Course;
   public course3: Course;
 
@@ -21,7 +22,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.setInitialCourses();
+    this.setInitialBanner();
   }
 
   public logViewChildren(): void {
@@ -44,35 +45,7 @@ export class MainComponent implements OnInit {
     course.hasStarted = !course.hasStarted;
   }
 
-  private setInitialCourses(): void {
-    this.course1 = {
-      title: 'Angular 10',
-      description: 'Angular is a platform for building mobile and desktop web applications.',
-      price: 700,
-      duration: 24,
-      imageUrl: 'https://picsum.photos/100/100',
-      isActive: true,
-      promoCode: ''
-    };
+  private setInitialBanner(): void {
 
-    this.course2 = {
-      title: 'ReactJs',
-      description: 'A JavaScript library for building user interfaces, maintained by Facebook',
-      price: 500,
-      duration: 24,
-      imageUrl: 'https://picsum.photos/100/100',
-      isActive: true,
-      promoCode: ''
-    };
-
-    this.course3 = {
-      title: 'VueJs',
-      description: 'The Progressive JavaScript Framework.',
-      price: 450,
-      duration: 24,
-      imageUrl: 'https://picsum.photos/100/100',
-      isActive: true,
-      promoCode: ''
-    };
   }
 }
