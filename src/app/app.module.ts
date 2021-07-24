@@ -12,6 +12,7 @@ import { PopularDestinationComponent } from './home-page/popular-destination/pop
 import { FeaturedTravelComponent } from './home-page/featured-travel/featured-travel.component';
 import { WhyUsComponent } from './home-page/why-us/why-us.component';
 import { TestimonialComponent } from './home-page/testimonial/testimonial.component';
+import { FooterComponent } from './home-page/footer/footer.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TestimonialComponent } from './home-page/testimonial/testimonial.compon
     PopularDestinationComponent,
     FeaturedTravelComponent,
     WhyUsComponent,
-    TestimonialComponent
+    TestimonialComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
