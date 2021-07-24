@@ -3,11 +3,11 @@ import { CourseCardComponent } from '../course-card/course-card.component';
 import { Course } from '../models/course.model';
 
 @Component({
-  selector: 'app-course-list',
-  templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.scss']
+  selector: 'main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
-export class CourseListComponent implements OnInit {
+export class MainComponent implements OnInit {
 
   @ViewChild(CourseCardComponent) course1Ref: CourseCardComponent;
   @ViewChild('listTitle') listTitleRef: ElementRef;
