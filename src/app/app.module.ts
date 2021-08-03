@@ -13,6 +13,11 @@ import { FeaturedTravelComponent } from './main-app/home-page/featured-travel/fe
 import { WhyUsComponent } from './main-app//home-page/why-us/why-us.component';
 import { TestimonialComponent } from './main-app/home-page/testimonial/testimonial.component';
 import { FooterComponent } from './main-app/home-page/footer/footer.component';
+import { TravelsComponent } from './main-app/travel-page/travels.component';
+import { ConvertTimePipe } from './pipes/convert-time.pipe';
+import { TravelDetailsComponent } from './main-app/travel-page/travel-details/travel-details.component';
+import { TravelsSearchComponent } from './main-app/travel-page/travels-search/travels-search.component';
+import { TravelItineraryComponent } from './main-app/travel-page/travel-details/travel-itinerary/travel-itinerary.component';
 
 
 @NgModule({
@@ -26,7 +31,12 @@ import { FooterComponent } from './main-app/home-page/footer/footer.component';
     FeaturedTravelComponent,
     WhyUsComponent,
     TestimonialComponent,
-    FooterComponent
+    FooterComponent,
+    TravelsComponent,
+    ConvertTimePipe,
+    TravelDetailsComponent,
+    TravelsSearchComponent,
+    TravelItineraryComponent
   ],
   imports: [
     BrowserModule,
