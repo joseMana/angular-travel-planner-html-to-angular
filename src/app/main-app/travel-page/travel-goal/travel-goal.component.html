@@ -1,0 +1,133 @@
+<div>
+  <form [formGroup]="myForm" #myFormDirective="ngForm" (ngSubmit)="onSubmit(myFormDirective)">
+    <div class="row mt-3">
+      <div class="col-5">
+        <div class="d-flex flex-column h-inherit justify-content-center align-self-center align-items-center bg-white border-radius">
+          <img class="p-2 img-fluid" src="https://picsum.photos/650/450">
+        </div>
+      </div>
+      <div class="col pb-5">
+        <div class="form-group mb-4">
+          <input id="tg-name" type="text" class="border-0 form-control" placeholder="Travel Goal Name"
+                 formControlName="name">
+          <span class="text-danger" *ngIf="name?.invalid && name?.errors?.required && (name?.dirty || name?.touched)">
+            This field is required.
+          </span>
+          <span class="text-danger" *ngIf="name.errors?.maxlength">
+            This field's max length is 50.
+          </span>
+          <span class="text-danger" *ngIf="name.errors?.minlength">
+            This field's minimum length is 5.
+          </span>
+        </div>
+        <div class="form-group mb-4">
+          <input id="tg-place" type="text" class="border-0 form-control" placeholder="Place"
+                 formControlName="place">
+          <span class="text-danger" *ngIf="place?.invalid && place?.errors?.required && (place?.dirty || place?.touched)">
+            This field is required.
+          </span>
+        </div>
+        <div class="form-group mb-4">
+          <input id="tg-imagePath" type="text" class="border-0 form-control" placeholder="Image Url"
+                 formControlName="imgPath" />
+          <span class="text-danger" *ngIf="imgPath?.invalid && imgPath?.errors?.required && (imgPath?.dirty || imgPath?.touched)">
+            This field is required.
+          </span>
+        </div>
+        <div class="form-group mb-4">
+          <input id="tg-imgpath" type="text" class="border-0 form-control" placeholder="Short Description"
+                 formControlName="shortDescription"> 
+          <span class="text-danger" *ngIf="shortDescription?.invalid && shortDescription?.errors?.required && (shortDescription?.dirty || shortDescription?.touched)">
+            This field is required.
+          </span>
+          <span class="text-danger" *ngIf="shortDescription.errors?.maxlength">
+            This field's maximimum length is 255.
+          </span>
+          <span class="text-danger" *ngIf="shortDescription.errors?.minlength">
+            This field's minimum length is 5.
+          </span>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group mb-4">
+              Date of Departure
+              <input id="tg-dod" type="date" class="border-0 form-control"
+                     placeholder="Date of Description" formControlName="dateOfDeparture">
+              <span class="text-danger" *ngIf="dateOfDeparture?.hasError('dateValidator')">
+                    Selected date should not be in the past.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group mb-4">
+              Time of Departure
+              <input id="tg-tor" type="time" class="border-0 form-control" placeholder="Time of Departure"
+                     formControlName="timeOfDeparture">
+              <span class="text-danger" *ngIf="timeOfDeparture?.invalid && timeOfDeparture?.errors?.required && (timeOfDeparture?.dirty || timeOfDeparture?.touched)">
+                This field is required.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group mb-4">
+              Date of Return
+              <input id="tg-dor" type="date" class="border-0 form-control" placeholder="Date of Return"
+                     formControlName="dateOfReturn">
+              <span class="text-danger" *ngIf="dateOfReturn.touched && dateOfReturn.invalid">
+                    Selected date should be greater than the departure date.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            Time of Return
+            <input id="tg-tor" type="time" class="border-0 form-control" placeholder="Time of Return"
+                   formControlName="returnTime">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group mb-4">
+              <input id="tg-rqtravelers" type="number" class="border-0 form-control"
+                     placeholder="Required Travelers" formControlName="requiredTravelersCount">
+              <span class="text-danger" *ngIf="requiredTravelersCount?.invalid && requiredTravelersCount?.errors?.required && (requiredTravelersCount?.dirty || requiredTravelersCount?.touched)">
+                This field is required.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <ng-container formArrayName="itineraries">
+          <ng-container *ngFor="let itinerary of itineraries?.controls; let i = index">
+            <div class="form-group row">
+              <div class="col-1">
+                <label class="control-label">itinerary {{i + 1}}:</label>
+              </div>
+              <div class="col-10">
+                <input class="border-0 form-control" type="date" placeholder="Enter Itinerary"
+                       [formControlName]="i">
+              </div>
+              <div class="col-1">
+                <button (click)="removeItinerary(i)">Remove</button>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+        <hr>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center mt-5">
+      <button type="button" class="btn btn-green mr-2" (click)="addItinerary()">Add Itinerary</button>
+      <span class="text-danger"
+            *ngIf="itineraries?.invalid && itineraries?.errors?.duplicate && (itineraries?.dirty || itineraries?.touched)">
+        Duplicate Itineraries found!
+      </span>
+      <button type="submit" class="btn btn-green mr-2">Create</button> <!--[disabled]="myForm.invalid">Create</button> -->
+    </div>
+  </form>
+  <pre>{{ myForm?.value | json }}</pre>
+  <pre>{{ travels | json }}</pre>
+</div>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { ConvertTimePipe } from './pipes/convert-time.pipe';
 import { TravelDetailsComponent } from './main-app/travel-page/travel-details/travel-details.component';
 import { TravelsSearchComponent } from './main-app/travel-page/travels-search/travels-search.component';
 import { TravelItineraryComponent } from './main-app/travel-page/travel-details/travel-itinerary/travel-itinerary.component';
+import { TravelGoalComponent } from './main-app/travel-page/travel-goal/travel-goal.component';
 
 
 @NgModule({
@@ -36,12 +37,14 @@ import { TravelItineraryComponent } from './main-app/travel-page/travel-details/
     ConvertTimePipe,
     TravelDetailsComponent,
     TravelsSearchComponent,
-    TravelItineraryComponent
+    TravelItineraryComponent,
+    TravelGoalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

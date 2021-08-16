@@ -49,4 +49,10 @@ export class TravelsComponent implements OnInit {
   clickTravelDetail(clickedTravelDetail: Travel) {
     this.selectedTravelDetail = clickedTravelDetail;
   }
+
+  getNewTravelGoal(newTravel: Travel) {
+    console.log("getNewTravelGoal");
+    console.log(newTravel);
+    this.travelList?.push(newTravel);
+  }
 }
