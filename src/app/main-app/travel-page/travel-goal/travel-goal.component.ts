@@ -18,6 +18,8 @@ export class TravelGoalComponent implements OnInit {
   public myForm!: FormGroup;
   private maxNameLength: number = 50;
   private minNameLength: number = 5;
+  private minPlaceLength: number = 5;
+  private maxPlaceLength: number = 100;
   private maxShortDescLength: number = 255;
   private minShortDescLength: number = 5;
 
@@ -108,10 +110,10 @@ export class TravelGoalComponent implements OnInit {
   createTravelGoalForm(): FormGroup {
     return this.fb.group({
       'name': ['', [Validators.required, Validators.minLength(this.minNameLength) , Validators.maxLength(this.maxNameLength)]],
-      'place': ['', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
+      'place': ['', [Validators.required, Validators.minLength(this.minPlaceLength),Validators.maxLength(this.maxPlaceLength)]],
       'imgPath': ['https://picsum.photos/650/450', [Validators.required]],
       'shortDescription': ['', [Validators.required, Validators.minLength(this.minShortDescLength), Validators.maxLength(this.maxShortDescLength)]],
-      'dateOfDeparture': ['', DateValidator.departureDateValidator],
+      'dateOfDeparture': ['', this.departureDateValidator],
       'timeOfDeparture': ['', Validators.required],
       'dateOfReturn': ['', this.dateRangeValidator],
       'timeOfReturn': ['', Validators.required],
@@ -166,6 +168,39 @@ export class TravelGoalComponent implements OnInit {
       invalid = new Date(from).valueOf() >= new Date(to).valueOf();
     }
     return invalid ? { invalidRange: { from, to } } : null;
-    
+  };
+
+  private departureDateValidator: ValidatorFn = (): {
+    [key: string]: any;
+  } | null => {
+    let invalid = false;
+
+    /* allow same day departure */
+    var date = new Date();
+    var day = date.getDate();
+    var month = (date.getMonth() + 1).toString();
+    if (Number(month) <= 10) {
+      month = "0" + month;
+    }
+    var year = date.getFullYear();
+    var dateString = year + "-" + month + "-" + day;
+
+    const departureDateString = this.myForm! && this.myForm!.get("dateOfDeparture").value;
+
+    if (dateString == departureDateString) {
+      return { invalidRange: { dateString, year } };
+    }
+    /* allow same day departure */
+
+
+    console.log("Sef");
+
+
+    if (departureDateString && dateString) {
+      invalid = new Date(departureDateString).valueOf() >= new Date(Date.now()).valueOf();
+    }
+
+    return invalid ? null : { invalidRange: { dateString, year } };
+
   };
 }
