@@ -81,7 +81,10 @@
           <div class="col">
             Time of Return
             <input id="tg-tor" type="time" class="border-0 form-control" placeholder="Time of Return"
-                   formControlName="returnTime">
+                   formControlName="timeOfReturn">
+            <span class="text-danger" *ngIf="timeOfReturn?.invalid && timeOfReturn?.errors?.required && (timeOfReturn?.dirty || timeOfReturn?.touched)">
+              This field is required.
+            </span>
           </div>
         </div>
         <div class="row">
