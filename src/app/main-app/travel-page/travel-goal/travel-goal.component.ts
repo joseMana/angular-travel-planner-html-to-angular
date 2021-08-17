@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators, ValidatorFn } from '@angular/forms';
 import { Travel } from '../../../models/travel.model';
-import { DateValidator } from '../../../shared/validator.date';
+import { DateValidator } from '../../../validators/validator.date';
 
 @Component({
   selector: 'app-travel-goal',
