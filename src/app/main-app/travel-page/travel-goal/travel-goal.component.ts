@@ -149,13 +149,11 @@ export class TravelGoalComponent implements OnInit {
     }
 
     const travel: Travel = this.myForm.value as Travel;
-    console.log(travel);
     this.travels.push(form.value);
-    console.log(this.createdTravel);
     this.onSubmitClicked.emit(travel);
-    console.log(travel);
-    console.log("onSubmit");
     form.resetForm();
+
+    console.log(this.travels);
   }
 
   private dateRangeValidator: ValidatorFn = (): {
@@ -189,7 +187,7 @@ export class TravelGoalComponent implements OnInit {
     const departureDateString = this.myForm! && this.myForm!.get("dateOfDeparture").value;
 
     if (dateString == departureDateString) {
-      return { invalidRange: { dateString, year } };
+      return null;
     }
     /* allow same day departure */
 
