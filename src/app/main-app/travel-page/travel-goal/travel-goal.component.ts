@@ -144,17 +144,18 @@ export class TravelGoalComponent implements OnInit {
   )};
 
   onSubmit(form: FormGroupDirective): void {    
-    //console.warn(this.myForm.value);
-    //if (form.valid) {
-      const travel : Travel = this.myForm.value as Travel;
-      //console.log(travel);
-      //this.travels.push(form.value);
-      //console.log(this.createdTravel);
-      this.onSubmitClicked.emit(travel);
-      console.log(travel);
-      console.log("onSubmit");
-      form.resetForm();
-    //}
+    if (this.myForm.invalid) {
+      return;
+    }
+
+    const travel: Travel = this.myForm.value as Travel;
+    console.log(travel);
+    this.travels.push(form.value);
+    console.log(this.createdTravel);
+    this.onSubmitClicked.emit(travel);
+    console.log(travel);
+    console.log("onSubmit");
+    form.resetForm();
   }
 
   private dateRangeValidator: ValidatorFn = (): {
@@ -191,10 +192,6 @@ export class TravelGoalComponent implements OnInit {
       return { invalidRange: { dateString, year } };
     }
     /* allow same day departure */
-
-
-    console.log("Sef");
-
 
     if (departureDateString && dateString) {
       invalid = new Date(departureDateString).valueOf() >= new Date(Date.now()).valueOf();
