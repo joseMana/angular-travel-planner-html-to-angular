@@ -19,6 +19,7 @@ import { TravelDetailsComponent } from './main-app/travel-page/travel-details/tr
 import { TravelsSearchComponent } from './main-app/travel-page/travels-search/travels-search.component';
 import { TravelItineraryComponent } from './main-app/travel-page/travel-details/travel-itinerary/travel-itinerary.component';
 import { TravelGoalComponent } from './main-app/travel-page/travel-goal/travel-goal.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { TravelGoalComponent } from './main-app/travel-page/travel-goal/travel-g
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators, ValidatorFn } from '@angular/forms';
 import { Travel } from '../../../models/travel.model';
 import { DateValidator } from '../../../validators/validator.date';
+import { min } from 'moment';
 
 @Component({
   selector: 'app-travel-goal',
@@ -18,10 +19,12 @@ export class TravelGoalComponent implements OnInit {
   public myForm!: FormGroup;
   private maxNameLength: number = 50;
   private minNameLength: number = 5;
-  private minPlaceLength: number = 5;
   private maxPlaceLength: number = 100;
+  private minPlaceLength: number = 5;
   private maxShortDescLength: number = 255;
   private minShortDescLength: number = 5;
+  private maxRequiredTravelersCount: number = 100;
+  private minRequiredTravelersCount: number = 2;
 
 
   get name(): FormControl | null {
@@ -109,17 +112,17 @@ export class TravelGoalComponent implements OnInit {
 
   createTravelGoalForm(): FormGroup {
     return this.fb.group({
-      'name': ['', [Validators.required, Validators.minLength(this.minNameLength) , Validators.maxLength(this.maxNameLength)]],
-      'place': ['', [Validators.required, Validators.minLength(this.minPlaceLength),Validators.maxLength(this.maxPlaceLength)]],
+      'name': ['', [Validators.required, Validators.minLength(this.minNameLength), Validators.maxLength(this.maxNameLength)]],
+      'place': ['', [Validators.required, Validators.minLength(this.minPlaceLength), Validators.maxLength(this.maxPlaceLength)]],
       'imgPath': ['https://picsum.photos/650/450', [Validators.required]],
       'shortDescription': ['', [Validators.required, Validators.minLength(this.minShortDescLength), Validators.maxLength(this.maxShortDescLength)]],
       'dateOfDeparture': ['', this.departureDateValidator],
       'timeOfDeparture': ['', Validators.required],
       'dateOfReturn': ['', this.dateRangeValidator],
       'timeOfReturn': ['', Validators.required],
-      'organizer' : ['Seph Manangan'],
-      'status':['Pending'],
-      'requiredTravelersCount': [0],
+      'organizer': ['Seph Manangan'],
+      'status': ['Pending'],
+      'requiredTravelersCount': [0, [Validators.min(this.minRequiredTravelersCount), Validators.max(this.maxRequiredTravelersCount)]],
       'joinedTravelersCount':[0],
       'isActive':[false],
       'itineraries': this.fb.array([]),

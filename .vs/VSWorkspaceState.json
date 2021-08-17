@@ -4,11 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\main-app",
-    "\\src\\app\\main-app\\side-menu",
     "\\src\\app\\main-app\\travel-page",
-    "\\src\\app\\main-app\\travel-page\\travel-details",
     "\\src\\app\\main-app\\travel-page\\travel-goal",
-    "\\src\\app\\shared"
+    "\\src\\assets",
+    "\\src\\environments"
   ],
   "SelectedNode": "\\src\\app\\main-app\\travel-page\\travel-goal\\travel-goal.component.ts",
   "PreviewInSolutionExplorer": false

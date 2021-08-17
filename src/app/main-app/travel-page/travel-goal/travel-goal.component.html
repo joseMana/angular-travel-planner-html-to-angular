@@ -10,48 +10,26 @@
         <div class="form-group mb-4">
           <input id="tg-name" type="text" class="border-0 form-control" placeholder="Travel Goal Name"
                  formControlName="name">
-          <span class="text-danger" *ngIf="name?.invalid && name?.errors?.required && (name?.dirty || name?.touched)">
-            This field is required.
-          </span>
-          <span class="text-danger" *ngIf="name.errors?.maxlength">
-            This field's max length is 50.
-          </span>
-          <span class="text-danger" *ngIf="name.errors?.minlength">
-            This field's minimum length is 5.
-          </span>
+          <app-error-display [formControlElement]="name">
+          </app-error-display>
         </div>
         <div class="form-group mb-4">
           <input id="tg-place" type="text" class="border-0 form-control" placeholder="Place"
                  formControlName="place">
-          <span class="text-danger" *ngIf="place?.invalid && place?.errors?.required && (place?.dirty || place?.touched)">
-            This field is required.
-          </span>
-          <span class="text-danger" *ngIf="place.errors?.maxlength">
-            This field's max length is 50.
-          </span>
-          <span class="text-danger" *ngIf="place.errors?.minlength">
-            This field's minimum length is 5.
-          </span>
+          <app-error-display [formControlElement]="place">
+          </app-error-display>
         </div>
         <div class="form-group mb-4">
           <input id="tg-imagePath" type="text" class="border-0 form-control" placeholder="Image Url"
                  formControlName="imgPath" />
-          <span class="text-danger" *ngIf="imgPath?.invalid && imgPath?.errors?.required && (imgPath?.dirty || imgPath?.touched)">
-            This field is required.
-          </span>
+          <app-error-display [formControlElement]="imgPath">
+          </app-error-display>
         </div>
         <div class="form-group mb-4">
           <input id="tg-imgpath" type="text" class="border-0 form-control" placeholder="Short Description"
                  formControlName="shortDescription">
-          <span class="text-danger" *ngIf="shortDescription?.invalid && shortDescription?.errors?.required && (shortDescription?.dirty || shortDescription?.touched)">
-            This field is required.
-          </span>
-          <span class="text-danger" *ngIf="shortDescription.errors?.maxlength">
-            This field's maximimum length is 255.
-          </span>
-          <span class="text-danger" *ngIf="shortDescription.errors?.minlength">
-            This field's minimum length is 5.
-          </span>
+          <app-error-display [formControlElement]="shortDescription">
+          </app-error-display>
         </div>
         <div class="row">
           <div class="col">
@@ -101,6 +79,12 @@
               <span class="text-danger" *ngIf="requiredTravelersCount?.invalid && requiredTravelersCount?.errors?.required && (requiredTravelersCount?.dirty || requiredTravelersCount?.touched)">
                 This field is required.
               </span>
+              <span class="text-danger" *ngIf="requiredTravelersCount.errors?.max">
+                This field's max count is 100.
+              </span>
+              <span class="text-danger" *ngIf="requiredTravelersCount.errors?.min">
+                This field's minimum count is 2.
+              </span>
             </div>
           </div>
         </div>
@@ -137,15 +121,15 @@
       <button type="submit" class="btn btn-green mr-2" [disabled]="myForm.invalid">Create</button>
     </div>
   </form>
-  <pre>{{ myForm?.value | json }}</pre>
-  <pre>{{ travels | json }}</pre>
-  <br />
-  <br />
-  <div>name = {{ name.valid }}</div>
-  <div>place = {{ place.valid }}</div>
-  <div>shortDescription = {{ shortDescription.valid }}</div>
-  <div>dateOfDeparture = {{ dateOfDeparture.valid }}</div>
-  <div>timeOfDeparture = {{ timeOfDeparture.valid }}</div>
-  <div>dateOfReturn = {{ dateOfReturn.valid }}</div>
-  <div>timeOfReturn = {{ timeOfReturn.valid }}</div>
+    <pre>{{ myForm?.value | json }}</pre>
+    <pre>{{ travels | json }}</pre>
+    <br />
+    <br />
+    <div>name = {{ name.valid }}</div>
+    <div>place = {{ place.valid }}</div>
+    <div>shortDescription = {{ shortDescription.valid }}</div>
+    <div>dateOfDeparture = {{ dateOfDeparture.valid }}</div>
+    <div>timeOfDeparture = {{ timeOfDeparture.valid }}</div>
+    <div>dateOfReturn = {{ dateOfReturn.valid }}</div>
+    <div>timeOfReturn = {{ timeOfReturn.valid }}</div>
 </div>
